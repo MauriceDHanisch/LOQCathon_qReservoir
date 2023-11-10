@@ -12,7 +12,7 @@ The project focuses on the forecasting of renewable energy (RE) production. Robu
 Furthermore, these models, which are based on deep learning methods, require large data sets and can be very energy-intensive: one of the aims of the project is to develop models that consume less data and energy. In particular, we propose an approach based on Quantum Reservoir Computing, a promising method for processing time series.
 
 
-## Description of natural quantum reservoir process on a superconducting quantum computer
+## Description of natural quantum reservoir process on a superconducting quantum computer [1]
 
 The state of the Quantum Reservoir is evolving according to :
 
@@ -42,10 +42,21 @@ Where $\mathbf{X}=\left(\tilde{h}\left(\mathrm{x}_{t_f}\right), \ldots, \tilde{h
 
 $\mathrm{MSE}=\sum_{t=t_f}^{t_l}\left(\bar{y}_t-y_t\right)^2$
 
-##Goals of the challenge
+## Goals of the challenge
 As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :
 •	Pick a unitary that is more adapted to a photonic QC. 
 •	Check if your photonic reservoir enables to predict the NARMA sequence.  
 •	Check if your photonic reservoir enables to predict the EDF sequence.
 •	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.
+
+## References
+
+[1] Suzuki, Y., Gao, Q., Pradel, K.C. et al. Natural quantum reservoir computing for temporal information processing. Sci Rep 12, 1353 (2022). https://doi.org/10.1038/s41598-022-05061-w
+
+## About EDF :
+At EDF, our raison d’être is to build a net zero energy future with electricity and innovative solutions and services, to help save the planet and drive wellbeing and economic development. Wherever our Group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
+To serve these Goal, in 2022, EDF invested €649 million in research and development in three areas of research: energy transition, climate transition, and digital and societal transition
+
+
+
 
