@@ -10,4 +10,4 @@ This challenge is proposed in partnership with EDF. Your Quandela mentor will be
 
 The state of the Quantum Reservoir is evolving according to :
 
-$$\begin{aligned} \rho_t & =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \\ & =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)\end{aligned}$$
+$'\begin{aligned} \rho_t & =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \\ & =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)\end{aligned}'$
