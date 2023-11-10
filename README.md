@@ -49,13 +49,14 @@ As mentioned in the abstract, the goal of the challenge is to implement a photon
 •	Check if your photonic reservoir enables to predict the EDF sequence.
 •	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.
 
-## References
-
-[1] Suzuki, Y., Gao, Q., Pradel, K.C. et al. Natural quantum reservoir computing for temporal information processing. Sci Rep 12, 1353 (2022). https://doi.org/10.1038/s41598-022-05061-w
-
 ## About EDF :
 At EDF, our raison d’être is to build a net zero energy future with electricity and innovative solutions and services, to help save the planet and drive wellbeing and economic development. Wherever our Group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
 To serve these Goal, in 2022, EDF invested €649 million in research and development in three areas of research: energy transition, climate transition, and digital and societal transition
+
+
+## References
+
+[1] Suzuki, Y., Gao, Q., Pradel, K.C. et al. Natural quantum reservoir computing for temporal information processing. Sci Rep 12, 1353 (2022). https://doi.org/10.1038/s41598-022-05061-w
 
 
 
