@@ -6,7 +6,7 @@ Actual quantum computers are prone to noise and give an access to a great comput
 Moreover, single-photon Quantum Computing navigate in a computational space that is much bigger than the qubit space. Your challenge, if you accept it, would be to predict time-series provided by EDF using photonic quantum reservoir.
 This challenge is proposed in partnership with EDF. Your Quandela mentor will be Samuel Horsch. Please commit your code in the repository so we can keep track of your contribution. This will be part of the evaluation afterwards.
 
-##Why it is important for EDF ?
+## Why it is important for EDF ?
 
 The project focuses on the forecasting of renewable energy (RE) production. Robust and accurate forecasting models need to be developed if these energies are to be efficiently integrated into the grid and the use of fossil fuels is to be reduced. This is a highly complex task as renewables are highly dependent on meteorological conditions. 
 Furthermore, these models, which are based on deep learning methods, require large data sets and can be very energy-intensive: one of the aims of the project is to develop models that consume less data and energy. In particular, we propose an approach based on Quantum Reservoir Computing, a promising method for processing time series.
@@ -28,7 +28,7 @@ $$\bar{U}_{i, j}\left(u_t\right)=\mathrm{CX}_{i, j} \mathrm{RZ}_j\left(s_{u_t}\r
 
 $S_u_t = a u_t with a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be use with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence: 
 
-$$\rho_t=\mathscr{T}_{u_t} \circ \mathscr{T}_{u_{t-1}} \circ \cdots \circ \mathscr{T}_{u_1}\left(\rho_0\right)$$
+$$ \rho_t=\mathscr{T}_{u_t} \circ \mathscr{T}_{u_{t-1}} \circ \cdots \circ \mathscr{T}_{u_1}\left(\rho_0\right) $$
 
 and measure in the computational basis: 
 
