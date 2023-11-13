@@ -18,7 +18,7 @@ The state of the Quantum Reservoir is evolving according to :
 
 $$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$$
 
-Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $E_device$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
+Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
 
 $$U\left(u_t\right)=\bar{U}_{0,1}\left(u_t\right) \otimes \bar{U}_{2,3}\left(u_t\right) \otimes \cdots \otimes \bar{U}_{n-2, n-1}\left(u_t\right)$$
 
