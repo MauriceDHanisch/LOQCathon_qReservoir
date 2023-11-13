@@ -14,10 +14,8 @@ Furthermore, these models, which are based on deep learning methods, require lar
 
 ## Description of natural quantum reservoir process on a superconducting quantum computer [1]
 
-The state of the Quantum Reservoir is evolving according to :
-
-$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$
-
+The state of the Quantum Reservoir is evolving according to :\
+$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$\
 Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
 
 $$U\left(u_t\right)=\bar{U}_{0,1}\left(u_t\right) \otimes \bar{U}_{2,3}\left(u_t\right) \otimes \cdots \otimes \bar{U}_{n-2, n-1}\left(u_t\right)$$
@@ -26,15 +24,15 @@ A tensor product of 2-qubit unitaries, defined as :
 
 $$\bar{U}_{i, j}\left(u_t\right)=\mathrm{CX}_{i, j} \mathrm{RZ}_j\left(s_{u_t}\right) \mathrm{CX}_{i, j} \mathrm{RX}_i\left(s_{u_t}\right) \mathrm{RX}_j\left(s_{u_t}\right)$$
 
-$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:\ 
+$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:\
 
 $$\rho_t=\mathscr{T}_{u_t} \circ \mathscr{T}_{u_{t-1}} \circ \cdots \circ \mathscr{T}_{u_1}\left(\rho_0\right)$$
 
-and measure in the computational basis:\ 
+and measure in the computational basis:\
 
 $$h\left(\rho_t\right)=\left[\operatorname{Tr}\left(Z_1 \rho_t\right), \ldots, \operatorname{Tr}\left(Z_n \rho_t\right)\right]^{\mathrm{T}}$$
 
-To get the signal :\ 
+To get the signal :\
 
 $$\mathbf{y}=W_{\text {out }}^{\mathrm{T}} \mathbf{X}$$
 
@@ -44,8 +42,8 @@ $\mathrm{MSE}=\sum_{t=t_f}^{t_l}\left(\bar{y}_t-y_t\right)^2$
 
 ## Goals of the challenge
 As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :\
-•	Pick a unitary that is more adapted to a photonic QC.\ 
-•	Check if your photonic reservoir enables to predict the NARMA sequence.\  
+•	Pick a unitary that is more adapted to a photonic QC.\
+•	Check if your photonic reservoir enables to predict the NARMA sequence.\
 •	Check if your photonic reservoir enables to predict the EDF sequence.\
 •	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.\
 
