@@ -16,7 +16,7 @@ Furthermore, these models, which are based on deep learning methods, require lar
 
 The state of the Quantum Reservoir is evolving according to :
 
-<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="330" height="30" /></center>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="330" height="30" /></p>
 
 Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
 
