@@ -26,7 +26,7 @@ A tensor product of 2-qubit unitaries, defined as :
 
 $$\bar{U}_{i, j}\left(u_t\right)=\mathrm{CX}_{i, j} \mathrm{RZ}_j\left(s_{u_t}\right) \mathrm{CX}_{i, j} \mathrm{RX}_i\left(s_{u_t}\right) \mathrm{RX}_j\left(s_{u_t}\right)$$
 
-$S_{u_t} = a_{u_t} with a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be use with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence: 
+$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be use with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence: 
 
 $$\rho_t=\mathscr{T}_{u_t} \circ \mathscr{T}_{u_{t-1}} \circ \cdots \circ \mathscr{T}_{u_1}\left(\rho_0\right)$$
 
