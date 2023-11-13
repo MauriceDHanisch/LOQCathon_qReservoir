@@ -14,32 +14,32 @@ Furthermore, these models, which are based on deep learning methods, require lar
 
 ## Description of natural quantum reservoir process on a superconducting quantum computer [1]
 
-The state of the Quantum Reservoir is evolving according to :\
+The state of the Quantum Reservoir is evolving according to :
 
 ![image info](./Images/eq_1_EDF.png)
 
-Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :\
+Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
 
 ![image info](./Images/eq_2_EDF.png)
 
-A tensor product of 2-qubit unitaries, defined as :\
+A tensor product of 2-qubit unitaries, defined as :
 
 ![image info](./Images/eq_3_EDF.png)
 
 
-$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:\
+$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:
 
 ![image info](./Images/eq_4_EDF.png)
 
-and measure in the computational basis:\
+and measure in the computational basis:
 
 ![image info](./Images/eq_5_EDF.png)
 
-To get the signal :\
+To get the signal :
 
 $$\mathbf{y}=W_{\text {out }}^{\mathrm{T}} \mathbf{X}$$
 
-Where ![image info](./Images/eq_7_EDF.png) that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):\ 
+Where ![image info](./Images/eq_7_EDF.png) that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):
 
 ![image info](./Images/eq_8_EDF.png)
 
