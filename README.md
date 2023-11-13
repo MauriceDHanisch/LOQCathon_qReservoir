@@ -26,28 +26,28 @@ A tensor product of 2-qubit unitaries, defined as :
 
 $$\bar{U}_{i, j}\left(u_t\right)=\mathrm{CX}_{i, j} \mathrm{RZ}_j\left(s_{u_t}\right) \mathrm{CX}_{i, j} \mathrm{RX}_i\left(s_{u_t}\right) \mathrm{RX}_j\left(s_{u_t}\right)$$
 
-$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence: 
+$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:/ 
 
 $$\rho_t=\mathscr{T}_{u_t} \circ \mathscr{T}_{u_{t-1}} \circ \cdots \circ \mathscr{T}_{u_1}\left(\rho_0\right)$$
 
-and measure in the computational basis: 
+and measure in the computational basis:/ 
 
 $$h\left(\rho_t\right)=\left[\operatorname{Tr}\left(Z_1 \rho_t\right), \ldots, \operatorname{Tr}\left(Z_n \rho_t\right)\right]^{\mathrm{T}}$$
 
-To get the signal : 
+To get the signal :/ 
 
 $$\mathbf{y}=W_{\text {out }}^{\mathrm{T}} \mathbf{X}$$
 
-Where $\mathbf{X}=\left(\tilde{h}\left(\mathrm{x}_{t_f}\right), \ldots, \tilde{h}\left(\mathrm{x}_{t_l}\right)\right)$ and $\mathbf{y}=\left(\bar{y}_{t_f}, \ldots, \bar{y}_{t_l}\right)$ that are then fitted by tuning $W_out$, in a supervised fashion using mean-squared error with the target output ($y_t$): 
+Where $\mathbf{X}=\left(\tilde{h}\left(\mathrm{x}_{t_f}\right), \ldots, \tilde{h}\left(\mathrm{x}_{t_l}\right)\right)$ and $\mathbf{y}=\left(\bar{y}_{t_f}, \ldots, \bar{y}_{t_l}\right)$ that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):/ 
 
 $\mathrm{MSE}=\sum_{t=t_f}^{t_l}\left(\bar{y}_t-y_t\right)^2$
 
 ## Goals of the challenge
-As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :
-•	Pick a unitary that is more adapted to a photonic QC. 
-•	Check if your photonic reservoir enables to predict the NARMA sequence.  
-•	Check if your photonic reservoir enables to predict the EDF sequence.
-•	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.
+As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :/
+•	Pick a unitary that is more adapted to a photonic QC./ 
+•	Check if your photonic reservoir enables to predict the NARMA sequence./  
+•	Check if your photonic reservoir enables to predict the EDF sequence./
+•	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences./
 
 ## About EDF :
 At EDF, our raison d’être is to build a net zero energy future with electricity and innovative solutions and services, to help save the planet and drive wellbeing and economic development. Wherever our Group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
