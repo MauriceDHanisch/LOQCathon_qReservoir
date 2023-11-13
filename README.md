@@ -15,36 +15,33 @@ Furthermore, these models, which are based on deep learning methods, require lar
 ## Description of natural quantum reservoir process on a superconducting quantum computer [1]
 
 The state of the Quantum Reservoir is evolving according to :\
+
 ![image info](./Images/eq_1_EDF.png)
-$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text{device}}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$\
+
 Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :\
 
 ![image info](./Images/eq_2_EDF.png)
-$$U\left(u_t\right)=\bar{U}_{0,1}\left(u_t\right) \otimes \bar{U}_{2,3}\left(u_t\right) \otimes \cdots \otimes \bar{U}_{n-2, n-1}\left(u_t\right)$$
 
 A tensor product of 2-qubit unitaries, defined as :\
 
 ![image info](./Images/eq_3_EDF.png)
-$$\bar{U}_{i, j}\left(u_t\right)=\mathrm{CX}_{i, j} \mathrm{RZ}_j\left(s_{u_t}\right) \mathrm{CX}_{i, j} \mathrm{RX}_i\left(s_{u_t}\right) \mathrm{RX}_j\left(s_{u_t}\right)$$
+
 
 $S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:\
 
 ![image info](./Images/eq_4_EDF.png)
-$$\rho_t=\mathscr{T}_{u_t} \circ \mathscr{T}_{u_{t-1}} \circ \cdots \circ \mathscr{T}_{u_1}\left(\rho_0\right)$$
 
 and measure in the computational basis:\
 
 ![image info](./Images/eq_5_EDF.png)
-$$h\left(\rho_t\right)=\left[\operatorname{Tr}\left(Z_1 \rho_t\right), \ldots, \operatorname{Tr}\left(Z_n \rho_t\right)\right]^{\mathrm{T}}$$
 
 To get the signal :\
 
 $$\mathbf{y}=W_{\text {out }}^{\mathrm{T}} \mathbf{X}$$
 
-Where ![image info](./Images/eq_7_EDF.png) $\mathbf{X}=\left(\tilde{h}\left(\mathrm{x}_{t_f}\right), \ldots, \tilde{h}\left(\mathrm{x}_{t_l}\right)\right)$ and $\mathbf{y}=\left(\bar{y}_{t_f}, \ldots, \bar{y}_{t_l}\right)$ that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):\ 
+Where ![image info](./Images/eq_7_EDF.png) that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):\ 
 
 ![image info](./Images/eq_8_EDF.png)
-$\mathrm{MSE}=\sum_{t=t_f}^{t_l}\left(\bar{y}_t-y_t\right)^2$
 
 ## Goals of the challenge
 As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :\
