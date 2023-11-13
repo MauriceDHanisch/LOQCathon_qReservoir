@@ -17,7 +17,7 @@ Furthermore, these models, which are based on deep learning methods, require lar
 The state of the Quantum Reservoir is evolving according to :
 
 $$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$$
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="200" height="200" />
+<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="25" height="250" />
 
 
 
