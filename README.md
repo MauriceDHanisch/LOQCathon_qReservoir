@@ -46,7 +46,7 @@ Where,
 
 that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):
 
-<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_8_EDF.png" width="147" height="30" /></center>
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_8_EDF.png" width="196" height="40" /></center>
 
 ## Goals of the challenge
 As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :\
