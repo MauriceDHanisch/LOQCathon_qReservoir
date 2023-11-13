@@ -59,7 +59,8 @@ As mentioned in the abstract, the goal of the challenge is to implement a photon
 At EDF, our raison d’être is to build a net zero energy future with electricity and innovative solutions and services, to help save the planet and drive wellbeing and economic development. Wherever our Group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
 To serve these Goal, in 2022, EDF invested €649 million in research and development in three areas of research: energy transition, climate transition, and digital and societal transition
 
-![image info](./Images/logo_EDF.png)
+<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/logo_EDF.png"/>
+
 
 
 ## References
