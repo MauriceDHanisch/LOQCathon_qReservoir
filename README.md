@@ -51,7 +51,7 @@ As mentioned in the abstract, the goal of the challenge is to implement a photon
 •	Pick a unitary that is more adapted to a photonic QC.\
 •	Check if your photonic reservoir enables to predict the NARMA sequence.\
 •	Check if your photonic reservoir enables to predict the EDF sequence.\
-•	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.\
+•	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.
 
 ## About EDF :
 At EDF, our raison d’être is to build a net zero energy future with electricity and innovative solutions and services, to help save the planet and drive wellbeing and economic development. Wherever our Group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
