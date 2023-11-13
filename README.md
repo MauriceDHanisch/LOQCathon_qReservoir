@@ -16,34 +16,37 @@ Furthermore, these models, which are based on deep learning methods, require lar
 
 The state of the Quantum Reservoir is evolving according to :
 
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="330" height="30" />
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="330" height="30" /></center>
 
 Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
 
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_2_EDF.png" width="450" height="30" />
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_2_EDF.png" width="450" height="30" /></center>
 
 A tensor product of 2-qubit unitaries, defined as :
 
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_3_EDF.png" width="395" height="30" />
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_3_EDF.png" width="395" height="30" /></center>
 
 $S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:
 
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_4_EDF.png" width="312" height="30" />
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_4_EDF.png" width="312" height="30" /></center>
 
 
 and measure in the computational basis:
 
 
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_5_EDF.png" width="283" height="30" />
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_5_EDF.png" width="283" height="30" /></center>
 
 To get the signal :
 
-$$\mathbf{y}=W_{\text {out }}^{\mathrm{T}} \mathbf{X}$$
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_6_EDF.png" width="101" height="30" /></center>
 
-Where <img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_7_EDF.png" width="322" height="30" />
- that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):
+Where,
 
-<img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_8_EDF.png" width="147" height="30" />
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_7_EDF.png" width="322" height="30" /></center>
+
+that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):
+
+<center><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_8_EDF.png" width="147" height="30" /></center>
 
 ## Goals of the challenge
 As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :\
