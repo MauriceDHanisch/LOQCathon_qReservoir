@@ -16,7 +16,7 @@ Furthermore, these models, which are based on deep learning methods, require lar
 
 The state of the Quantum Reservoir is evolving according to :
 
-$$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$$
+$\rho_t =\mathscr{T}_{u_t}\left(\rho_{t-1}\right) \ =\mathscr{E}_{\text {device }}\left(U\left(u_t\right) \rho_{t-1} U\left(u_t\right)^{\dagger}\right)$
 
 Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP map that correspond to the real device during operation. $U(u_t)$ is define like :
 
