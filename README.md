@@ -56,7 +56,7 @@ As mentioned in the abstract, the goal of the challenge is to implement a photon
 •	Pick a unitary that is more adapted to a photonic QC.\
 •	Check if your photonic reservoir enables to predict the NARMA sequence.\
 •	Check if your photonic reservoir enables to predict the EDF sequence.\
-•	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from REF  , for the training and testing sequences.
+•	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from [1], for the training and testing sequences.
 
 ## About EDF :
 At EDF, our raison d’être is to build a net zero energy future with electricity and innovative solutions and services, to help save the planet and drive wellbeing and economic development. Wherever our Group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
@@ -72,7 +72,3 @@ To serve these Goal, in 2022, EDF invested €649 million in research and develo
 [2] Fujii, K., Nakajima, K. Harnessing disordered quantum dynamics for machine learning. Phys. Rev. Applied **8**, 024030 (2017). https://doi.org/10.1103/PhysRevApplied.8.024030 (http://arxiv.org/abs/1602.08159) <br>
 [3] Cucchi, M. et al. Hands-on reservoir computing: a tutorial for practical implementation. Neuromorph. Comput. Eng. **2**, 032002 (2022). https://doi.org/10.1088/2634-4386/ac7db7 <br>
 [4] Nakajima, K. Physical reservoir computing—an introductory perspective. Jpn. J. Appl. Phys. **59**, 060501 (2020). https://doi.org/10.35848/1347-4065/ab8d4f <br>
-
-
-
-
