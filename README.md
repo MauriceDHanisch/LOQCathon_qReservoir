@@ -65,10 +65,10 @@ To serve these Goal, in 2022, EDF invested €649 million in research and develo
 
 ## References
 
-[1] Suzuki, Y., Gao, Q., Pradel, K.C. et al. Natural quantum reservoir computing for temporal information processing. Sci Rep **12**, 1353 (2022). https://doi.org/10.1038/s41598-022-05061-w (https://arxiv.org/pdf/2107.05808.pdf)
-[2] Fujii, K., Nakajima, K. Harnessing disordered quantum dynamics for machine learning. Phys. Rev. Applied **8**, 024030 (2017). https://doi.org/10.1103/PhysRevApplied.8.024030 (http://arxiv.org/abs/1602.08159)
-[3] Cucchi, M. et al. Hands-on reservoir computing: a tutorial for practical implementation. Neuromorph. Comput. Eng. **2**, 032002 (2022). https://doi.org/10.1088/2634-4386/ac7db7
-[4] Nakajima, K. Physical reservoir computing—an introductory perspective. Jpn. J. Appl. Phys. **59**, 060501 (2020). https://doi.org/10.35848/1347-4065/ab8d4f
+[1] Suzuki, Y., Gao, Q., Pradel, K.C. et al. Natural quantum reservoir computing for temporal information processing. Sci Rep **12**, 1353 (2022). https://doi.org/10.1038/s41598-022-05061-w (https://arxiv.org/pdf/2107.05808.pdf) <br>
+[2] Fujii, K., Nakajima, K. Harnessing disordered quantum dynamics for machine learning. Phys. Rev. Applied **8**, 024030 (2017). https://doi.org/10.1103/PhysRevApplied.8.024030 (http://arxiv.org/abs/1602.08159) <br>
+[3] Cucchi, M. et al. Hands-on reservoir computing: a tutorial for practical implementation. Neuromorph. Comput. Eng. **2**, 032002 (2022). https://doi.org/10.1088/2634-4386/ac7db7 <br>
+[4] Nakajima, K. Physical reservoir computing—an introductory perspective. Jpn. J. Appl. Phys. **59**, 060501 (2020). https://doi.org/10.35848/1347-4065/ab8d4f <br>
 
 
 
