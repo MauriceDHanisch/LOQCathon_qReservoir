@@ -11,6 +11,9 @@ This challenge is proposed in partnership with EDF. Your Quandela mentor will be
 The project focuses on the forecasting of renewable energy (RE) production. Robust and accurate forecasting models need to be developed if these energies are to be efficiently integrated into the grid and the use of fossil fuels is to be reduced. This is a highly complex task as renewables are highly dependent on meteorological conditions. 
 Furthermore, these models, which are based on deep learning methods, require large data sets and can be very energy-intensive: one of the aims of the project is to develop models that consume less data and energy. In particular, we propose an approach based on Quantum Reservoir Computing, a promising method for processing time series.
 
+## Reservoir computing (RC)
+
+As mentioned above reservoir computing offeres a less computing intensive way to replace recurrent neural networks (RNNs). The idea of reservoir computing is to map the input state into a higher deimensional space and then train an output function for a given task, such as time series prediction or classification. The reservoir is this intermediate higher dimentional space where the input is mapped into. The advantage of such a setup is that one can keep the reservoir fixed an has to only train the output function. This can be done via a simple linear regression.[3] gives some further introduction to reservoir computing. This reservoir can in theory be anything as shown in [4]. Specifically it can be a quantum system. [1] showed how to use a superconducting quantum computer as such a reservoir. In [2] you can find a more complete description of quantum reservoir computing.
 
 ## Description of natural quantum reservoir process on a superconducting quantum computer [1]
 
