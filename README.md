@@ -53,7 +53,7 @@ that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using m
 
 ## Goals of the challenge
 As mentioned in the abstract, the goal of the challenge is to implement a photonic quantum reservoir to predict time-series. You may :\
-•	Pick a unitary that is more adapted to a photonic QC.\
+•	Pick a unitary that is more adapted to a photonic QC. (This might require some creativity )\ 
 •	Check if your photonic reservoir enables to predict the NARMA sequence.\
 •	Check if your photonic reservoir enables to predict the EDF sequence.\
 •	Benchmark your results by computing the mean and standard deviation of the overall sequence with the results from [1], for the training and testing sequences.
