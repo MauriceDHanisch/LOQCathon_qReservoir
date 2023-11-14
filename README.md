@@ -21,7 +21,7 @@ The state of the Quantum Reservoir is evolving according to :
 
 <p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_1_EDF.png" width="330" height="30" /></p>
 
-Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP (completely positive trace preserving) map that correspond to the real device during operation. $U(u_t)$ is defined like :
+Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary. $\mathscr{E}_{\text{device}}$ is a CPTP (completely positive trace preserving) map that correspond to the real device during operation. In [1] $U(u_t)$ is defined like:
 
 <p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_2_EDF.png" width="450" height="30" /></p>
 
