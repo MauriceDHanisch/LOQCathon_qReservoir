@@ -1,4 +1,7 @@
 # unloqc-prediction_of_energy_consumption_EDF
+
+Your mentor for this challenge will be Samuel Horsch.
+
 ## Abstract 
 It is a challenging problem to predict time-series i.e. a state of a system at a given timestep given its state at the previous timestep. One way to do it is using neural networks, more specifically recurrent neural networks where the output of some node affects subsequent input of the same node.
 Reservoir computing is derived from recurrent neural network and input a signal into a higher dimensional space, thanks to the dynamics of a reservoir (fixed, non-linear system). The output of the reservoir is then plainly trained to map the desired output. Reservoir computing is computationally less costly compared to RNNs.
