@@ -29,7 +29,7 @@ A tensor product of 2-qubit unitaries, defined as :
 
 <p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_3_EDF.png" width="395" height="30" /></p>
 
-$S_{u_t} = a_{u_t}$ with $a \in R$. (side remark this has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC). The initial state is an equal superposition of all states. We repeatedly apply the above sequence:
+$S_{u_t} = a_{u_t}$ with $a \in R$. This has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC. The initial state is an equal superposition of all states. We repeatedly apply the above sequence:
 
 <p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-prediction_of_energy_consumption_EDF/blob/main/Images/eq_4_EDF.png" width="312" height="30" /></p>
 
