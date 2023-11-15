@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+reservoirpy = "*"
 perceval-quandela = "~=0.9.1"
 numpy = "*"
 jupyter = "*"
@@ -16,4 +17,5 @@ ipywidgets = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.11"
+python_version = "3.10"
+python_full_version = "3.10.12"
