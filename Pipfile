@@ -13,6 +13,8 @@ ipykernel = "*"
 scikit-learn = "*"
 matplotlib = "*"
 ipywidgets = "*"
+lo-reservoir = {file = ".", editable = true}
+pytest = "*"
 
 [dev-packages]
 

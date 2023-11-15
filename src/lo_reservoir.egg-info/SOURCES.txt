@@ -1,0 +1,8 @@
+README.md
+setup.py
+src/lo_reservoir/__init__.py
+src/lo_reservoir/method_1.py
+src/lo_reservoir.egg-info/PKG-INFO
+src/lo_reservoir.egg-info/SOURCES.txt
+src/lo_reservoir.egg-info/dependency_links.txt
+src/lo_reservoir.egg-info/top_level.txt
