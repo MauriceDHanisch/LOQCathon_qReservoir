@@ -1,12 +1,6 @@
-import sys
-from pathlib import Path
-# Add the parent directory of 'src' to the Python path
-root_dir = Path(__file__).resolve().parent.parent  # Adjust this path as necessary
-sys.path.append(str(root_dir))
-
 import numpy as np
 
-from lo_reservoir import PhotonicReservoirSimulator  # Replace with the actual import
+from lo_reservoir import PhotonicReservoirSimulator
 
 def test_mode_expectations():
     # Create an instance of the simulator with known parameters
