@@ -130,4 +130,4 @@ class PhotonicReservoirSimulator:
             # Append the expectation values to the matrix
             expectations_matrix.append(expectation_values)
 
-        return expectations_matrix
+        return np.array(expectations_matrix)
