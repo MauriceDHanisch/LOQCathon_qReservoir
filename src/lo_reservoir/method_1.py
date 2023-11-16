@@ -109,3 +109,25 @@ class PhotonicReservoirSimulator:
             for mode in range(self.m):
                 expectations[mode] += state[mode] * probability
         return expectations
+
+    def sequential_expectation_calculation(self, data, input_state):
+        # Initialize an empty matrix to store expectation values
+        expectations_matrix = []
+
+        for t in tqdm(range(self.t_max), desc="Processing time steps"):
+            # Generate a circuit with num_layers = t
+            self.set_circuit_with_stored_layers(num_layers=t)
+
+            # Take the first t rows of the data matrix
+            params_subset = data[:t]
+
+            # Set the parameters of the circuit
+            self.set_circuit_parameters(params_subset)
+
+            # Evaluate the expectation values
+            expectation_values = self.calculate_mode_expectations(input_state)
+
+            # Append the expectation values to the matrix
+            expectations_matrix.append(expectation_values)
+
+        return expectations_matrix
