@@ -24,9 +24,9 @@ def generate_gaussian_0_1(mean, std_dev, num_samples):
     return np.array(samples)
 
 class PhotonicReservoirSimulator:
-    def __init__(self, m, t, overlapping=False):
+    def __init__(self, m, t_max, overlapping=False):
         self.m = m  # Number of modes
-        self.t = t  # Number of time layerse
+        self.t_max = t_max  # Number of time layerse
         self.overlapping = overlapping
         self.layers = []  # Stores generated layers
 
@@ -140,10 +140,12 @@ class PhotonicReservoirSimulator:
             main_circuit = main_circuit.add(0, self.full_layer_loss())
         return main_circuit
     
-    def generate_rndm_param_matrix(self):
-        """
-        Generates a random parameter matrix of size (t, num_parameters).
-        """
+
+    def generate_rndm_param_matrix(self, num_layers=None):
+        """Generates a random parameter matrix of size (t, num_parameters)."""
+        if num_layers is None:
+            print("WARNING: No number of layers provided for rndm data matrix. Using t_max.")
+            num_layers = self.t_max
         num_parameters = len(self.circuit.get_parameters())
         # Random dataset of angles
         return np.random.rand(num_layers, num_parameters//num_layers)*2*np.pi
