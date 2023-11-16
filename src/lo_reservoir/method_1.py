@@ -38,6 +38,26 @@ class PhotonicReservoirSimulator:
         #print("setting self.circuit...")
         self.circuit = circuit
 
+    def set_circuit_with_memory(self, memory_length, num_layers):
+        """Creates a circuit using layers starting from num_layer - memory up to num_layer."""
+
+        # Adjust starting point based on memory
+        start_layer = max(num_layers - memory_length, 0)
+
+        # Generate additional layers if needed
+        if num_layers > len(self.layers):
+            missing_layers = num_layers - len(self.layers)
+            print(f"WARNING: Requested more layers than generated. Generating {missing_layers} more layers...")
+            for t in tqdm(range(len(self.layers), num_layers), desc="Generating layers"):
+                self.layers.append(self.full_layer(t))
+
+        # Create the circuit using the specified range of stored layers
+        circuit = pcvl.Circuit(self.m)
+        for layer in self.layers[start_layer:num_layers]:
+            circuit = circuit.add(0, layer)
+
+        self.circuit = circuit
+
     def U_ij_t(self, i, j, t=0):
         """Returns the unitary acting on mode i and j."""
         return (pcvl.Circuit(2, name=f"U_{i}{j}_t{t}")
@@ -104,6 +124,14 @@ class PhotonicReservoirSimulator:
         backend.set_input_state(input_state)
         prob_distribution = backend.prob_distribution()
 
+        # source = pcvl.Source(1, 0, 1, 0)
+        # processor = pcvl.Processor("SLOS", self.circuit, source=source)      
+        # processor.min_detected_photons_filter(0)
+        # processor.with_input(input_state)
+        # sampler = pcvl.algorithm.Sampler(processor)
+        # prob_distribution = sampler.probs()["results"]
+
+
         expectations = [0.0 for _ in range(self.m)]
         for state, probability in prob_distribution.items():
             for mode in range(self.m):
@@ -120,6 +148,66 @@ class PhotonicReservoirSimulator:
 
             # Take the first t rows of the data matrix
             params_subset = data[:t]
+
+            # Set the parameters of the circuit
+            self.set_circuit_parameters(params_subset)
+
+            # Evaluate the expectation values
+            expectation_values = self.calculate_mode_expectations(input_state)
+
+            # Append the expectation values to the matrix
+            expectations_matrix.append(expectation_values)
+
+        return np.array(expectations_matrix)
+    
+
+    def sequential_expectation_with_memory(self, data, input_state, memory_length):
+        """Calculates sequential expectation values using a specified number of memory layers."""
+
+        # Initialize an empty matrix to store expectation values
+        expectations_matrix = []
+
+        for t in tqdm(range(self.t_max), desc="Processing time steps"):
+            # Generate a circuit with memory layers starting from t - memory
+            self.set_circuit_with_memory(memory_length=memory_length, num_layers=t)
+
+            # Take the latest 'memory' rows of the data matrix up to the current time step t
+            # Ensure we don't go below index 0
+            start_index = max(0, t - memory_length)
+            params_subset = data[start_index:t]
+
+            # Set the parameters of the circuit
+            self.set_circuit_parameters(params_subset)
+
+            # Evaluate the expectation values
+            expectation_values = self.calculate_mode_expectations(input_state)
+
+            # Append the expectation values to the matrix
+            expectations_matrix.append(expectation_values)
+
+        return np.array(expectations_matrix)
+
+
+    def sequential_expectation_with_memory_and_decay(self, data, input_state, memory_length, decay_rate=None):
+        """Calculates sequential expectation values using a specified number of memory layers and a decay parameter."""
+
+        # Initialize an empty matrix to store expectation values
+        expectations_matrix = []
+
+        for t in tqdm(range(self.t_max), desc="Processing time steps"):
+            # Generate a circuit with memory layers starting from t - memory
+            self.set_circuit_with_memory(memory_length=memory_length, num_layers=t)
+
+            # Take the latest 'memory' rows of the data matrix up to the current time step t
+            # Ensure we don't go below index 0
+            start_index = max(0, t - memory_length)
+            params_subset = data[start_index:t]
+
+            if decay_rate is not None:
+                # Apply decay to the parameters subset
+                for i in range(len(params_subset)):
+                    decay_factor = (1 / (decay_rate * (len(params_subset) - i) + 1))
+                    params_subset[i] *= decay_factor
 
             # Set the parameters of the circuit
             self.set_circuit_parameters(params_subset)
