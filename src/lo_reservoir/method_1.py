@@ -98,7 +98,7 @@ class PhotonicReservoirSimulator:
     
     def create_circuit_loss(self):
         """
-        Creates a circuit with t layers and loss.
+        Creates a processor with t layers and loss.
         """
         main_circuit = pcvl.Processor(self.m, source=pcvl.Source(emission_probability=.6, multiphoton_component=.01))
         print(self.noise_modes)
@@ -107,7 +107,9 @@ class PhotonicReservoirSimulator:
         return main_circuit
     
     def generate_rndm_param_matrix(self):
-        """Generates a random parameter matrix of size (t, num_parameters)."""
+        """
+        Generates a random parameter matrix of size (t, num_parameters).
+        """
         num_parameters = len(self.circuit.get_parameters())
         return np.random.rand(self.t, num_parameters//self.t)*2*np.pi # Random dataset of angles
 
@@ -129,7 +131,11 @@ class PhotonicReservoirSimulator:
             param.set_value(value)
 
     def calculate_mode_expectations(self, input_state : pcvl.BasicState = None):
+        """
+        Calculate the mode expectations of the circuit.
 
+        :param input_state (pcvl.BasicState): The input state, defaults to the vacuum state.
+        """
         if input_state is None:
             print("WARNING: No input state provided. Using the vacuum state.")
             input_state = pcvl.BasicState([0] * self.m)
