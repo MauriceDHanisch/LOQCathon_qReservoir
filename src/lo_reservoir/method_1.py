@@ -1,15 +1,42 @@
 # Maurice D. Hanisch mhanisc@ethz.ch
 # 15.11.2023
 
+from tqdm import tqdm
+
 import perceval as pcvl
 import numpy as np
 
+
 class PhotonicReservoirSimulator:
-    def __init__(self, m, t, overlapping=False):
+    def __init__(self, m, t_max, overlapping=False):
         self.m = m  # Number of modes
-        self.t = t  # Number of time layerse
+        self.t_max = t_max  # Number of time layerse
         self.overlapping = overlapping
-        self.circuit = self.create_circuit()
+        self.layers = []  # Stores generated layers
+
+    def generate_and_store_layers(self):
+        """Generate and store layers up to max_t."""
+        self.layers = [self.full_layer(t) for t in range(self.t_max)]
+
+    def set_circuit_with_stored_layers(self, num_layers=None):
+        """Creates a circuit using the first num_layers from stored layers."""
+
+        if num_layers is None:
+            num_layers = self.t_max
+
+        # Generate additional layers if needed
+        if num_layers > len(self.layers):
+            missing_layers = num_layers - len(self.layers)
+            print(f"WARNING: Requested more layers than generated. Generating {missing_layers} more layers...")
+            for t in tqdm(range(len(self.layers), len(self.layers) + missing_layers), desc="Generating layers"):
+                self.layers.append(self.full_layer(t))
+
+        # Create the circuit using the stored layers
+        circuit = pcvl.Circuit(self.m)
+        for layer in self.layers[:num_layers]:
+            circuit = circuit.add(0, layer)
+        #print("setting self.circuit...")
+        self.circuit = circuit
 
     def U_ij_t(self, i, j, t=0):
         """Returns the unitary acting on mode i and j."""
@@ -34,20 +61,24 @@ class PhotonicReservoirSimulator:
         return layer
 
     def create_circuit(self):
-        """Creates a circuit with t layers."""
+        """Creates a circuit with t_max layers."""
         circuit = pcvl.Circuit(self.m)
-        for t in range(self.t):
+        for t in range(self.t_max):
             circuit = circuit.add(0, self.full_layer(t))
         return circuit
-    
-    def generate_rndm_param_matrix(self):
+
+    def generate_rndm_param_matrix(self, num_layers=None):
         """Generates a random parameter matrix of size (t, num_parameters)."""
+        if num_layers is None:
+            print("WARNING: No number of layers provided for rndm data matrix. Using t_max.")
+            num_layers = self.t_max
         num_parameters = len(self.circuit.get_parameters())
-        return np.random.rand(self.t, num_parameters//self.t)*2*np.pi # Random dataset of angles
+        # Random dataset of angles
+        return np.random.rand(num_layers, num_parameters//num_layers)*2*np.pi
 
     def set_circuit_parameters(self, parameter_matrix):
         """Set the parameters of the circuit to the values in the matrix.
-        
+
         Args:
             parameter_matrix (np.ndarray): A matrix of size (t, num_parameters).
 
@@ -57,11 +88,12 @@ class PhotonicReservoirSimulator:
         """
         flattened_params = parameter_matrix.flatten()
         params = self.circuit.get_parameters()
-        assert len(params) == len(flattened_params), f"Parameter length mismatch. Expected {len(params)} parameters, got {len(flattened_params)}."
+        assert len(params) == len(
+            flattened_params), f"Parameter length mismatch. Expected {len(params)} parameters, got {len(flattened_params)}."
         for param, value in zip(params, flattened_params):
             param.set_value(value)
 
-    def calculate_mode_expectations(self, input_state : pcvl.BasicState = None):
+    def calculate_mode_expectations(self, input_state: pcvl.BasicState = None):
 
         if input_state is None:
             print("WARNING: No input state provided. Using the vacuum state.")
