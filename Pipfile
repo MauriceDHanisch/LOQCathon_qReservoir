@@ -15,6 +15,7 @@ matplotlib = "*"
 ipywidgets = "*"
 lo-reservoir = {file = ".", editable = true}
 pytest = "*"
+pandas = "*"
 
 [dev-packages]
 
