@@ -6,7 +6,7 @@ import pandas as pd
 
 
 
-def load_data_into_matrix(file_name : str, m : int) -> np.array:
+def load_data_into_matrix_edf(file_name : str, m : int) -> np.array:
     """Loads the data from the file and returns a matrix of shape (t, (m-1)*5)"""
     try:
         df = pd.read_csv("wind_data_fr_2021.csv", sep=";")
