@@ -1,2 +1,2 @@
 from .method_1 import *
-from .method_1 import PhotonicReservoirSimulator
+from .data_handling import *
