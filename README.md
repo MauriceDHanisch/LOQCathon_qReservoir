@@ -44,42 +44,42 @@ pipenv install
 
 The state of the quantum reservoir is evolving according to:
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_1_EDF.png" width="330" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_1_EDF.png" width="330" height="30" /></p>
 
 Where $u_t$ are some scalar inputs. $\rho_t$ is the state of the system at time step $t$ and $U(u_t)$ an input dependent unitary.
 $\mathscr{E}_{\text{device}}$ is a CPTP (completely positive trace preserving) map that correspond to the real device during operation.
 In [1] $U(u_t)$ is defined like:
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_2_EDF.png" width="450" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_2_EDF.png" width="450" height="30" /></p>
 
 A tensor product of 2-qubit unitaries, defined as:
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_3_EDF.png" width="395" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_3_EDF.png" width="395" height="30" /></p>
 
 $S_{u_t} = a_{u_t}$ with $a \in R$.
 This has been used for a gate-based QC, perhaps more adapted unitaries shall be used with a single-photon QC.
 The initial state is an equal superposition of all states.
 We repeatedly apply the above sequence:
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_4_EDF.png" width="312" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_4_EDF.png" width="312" height="30" /></p>
 
 
 and measure in the computational basis:
 
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_5_EDF.png" width="283" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_5_EDF.png" width="283" height="30" /></p>
 
 to get the signal:
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_6_EDF.png" width="101" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_6_EDF.png" width="101" height="30" /></p>
 
 Where,
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_7_EDF.png" width="322" height="30" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_7_EDF.png" width="322" height="30" /></p>
 
 that are then fitted by tuning $W_{\text{out}}$, in a supervised fashion using mean-squared error with the target output ($y_t$):
 
-<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/eq_8_EDF.png" width="196" height="40" /></p>
+<p align="center"><img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/eq_8_EDF.png" width="196" height="40" /></p>
 
 ## Goals of the challenge
 Implement a linear optics quantum reservoir computing model that can lead to reduced processing time and energy consumption
@@ -92,7 +92,7 @@ At EDF, our raison d’être is to build a net zero energy future with electrici
 Wherever our group operates, we want to invent a new energy model to address the climate crisis: lower-carbon, more efficient, less of an impact on the environment and on people.
 To serve these Goal, in 2022, EDF invested €649 million in research and development in three areas of research: energy transition, climate transition, and digital and societal transition
 
-<img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/images/EDG_logo.png" width="705" height="300"/>
+<img src="https://github.com/LOQCathon2-0/unloqc-EDF-1/blob/main/Images/EDG_logo.png" width="705" height="300"/>
 
 ## References
 
