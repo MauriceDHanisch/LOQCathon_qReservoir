@@ -8,6 +8,22 @@ import perceval as pcvl
 import numpy as np
 
 
+def generate_gaussian_0_1(mean, std_dev, num_samples):
+    """
+    Generate Gaussian samples on the interval [0,1].
+
+    :param mean: The mean of the Gaussian distribution.
+    :param std_dev: The standard deviation of the Gaussian distribution.
+    :param num_samples: The number of samples to generate.
+    """
+    samples = []
+    while len(samples) < num_samples:
+        sample = np.random.normal(mean, std_dev)
+        if sample >= 0 and sample <= 1:
+            samples.append(sample)
+    return np.array(samples)
+
+
 class PhotonicReservoirSimulator:
     def __init__(self, m, t_max, overlapping=False):
         self.m = m  # Number of modes
@@ -113,11 +129,24 @@ class PhotonicReservoirSimulator:
         return layer
 
     def create_circuit(self):
-        """Creates a circuit with t_max layers."""
+        """
+        Creates a circuit with t layers.
+        """
         circuit = pcvl.Circuit(self.m)
         for t in range(self.t_max):
             circuit = circuit.add(0, self.full_layer(t))
         return circuit
+
+    def create_circuit_loss(self):
+        """
+        Creates a processor with t layers and loss.
+        """
+        main_circuit = pcvl.Processor(self.m, source=pcvl.Source(
+            emission_probability=.6, multiphoton_component=.01))
+        print(self.noise_modes)
+        for t in range(t):
+            main_circuit = main_circuit.add(0, self.full_layer_loss())
+        return main_circuit
 
     def generate_rndm_param_matrix(self, num_layers=None):
         """Generates a random parameter matrix of size (t, num_parameters)."""
@@ -130,7 +159,8 @@ class PhotonicReservoirSimulator:
         return np.random.rand(num_layers, num_parameters//num_layers)*2*np.pi
 
     def set_circuit_parameters(self, parameter_matrix):
-        """Set the parameters of the circuit to the values in the matrix.
+        """
+        Set the parameters of the circuit to the values in the matrix.
 
         Args:
             parameter_matrix (np.ndarray): A matrix of size (t, num_parameters).
@@ -147,7 +177,11 @@ class PhotonicReservoirSimulator:
             param.set_value(value)
 
     def calculate_mode_expectations(self, input_state: pcvl.BasicState = None):
+        """
+        Calculate the mode expectations of the circuit.
 
+        :param input_state (pcvl.BasicState): The input state, defaults to the vacuum state.
+        """
         if input_state is None:
             print("WARNING: No input state provided. Using the vacuum state.")
             input_state = pcvl.BasicState([0] * self.m)
