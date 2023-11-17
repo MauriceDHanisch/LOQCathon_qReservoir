@@ -278,3 +278,22 @@ class PhotonicReservoirSimulator:
             expectations_matrix.append(expectation_values)
 
         return np.array(expectations_matrix)
+    
+    def filter_keys_with_sum_one(dictionary):
+        """
+        Filter the keys in the dictionary where the sum of the last two numbers in the key string is exactly 1.
+
+        :param dictionary: Dictionary with keys in a specific string format and numerical values.
+        :return: List of keys that satisfy the condition.
+        """
+        filtered_keys = {}
+
+        for key in dictionary.keys():
+            # Split the key string and convert to integers
+            numbers = [int(num) for num in list(key)]
+
+            # Check if the sum of the last two numbers is 1
+            if sum(numbers[-2:]) == 1:
+                filtered_keys[key] = dictionary[key]
+
+        return filtered_keys
