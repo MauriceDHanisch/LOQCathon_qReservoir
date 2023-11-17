@@ -1,3 +1,5 @@
+# Maurice Hanisch mhanisc@ethz.ch
+
 import numpy as np
 
 from lo_reservoir import PhotonicReservoirSimulator
