@@ -1,4 +1,3 @@
-# Samuel Rey
 # Maurice Hanisch mhanisc@eth.ch 
 
 import numpy as np
